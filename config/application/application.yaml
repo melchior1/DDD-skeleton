@@ -1,0 +1,16 @@
+services:
+
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  Application\:
+    resource: '../../src/Application'
+
+  _instanceof:
+    Application\Shared\Message\Handler\CommandHandlerInterface:
+      tags:
+        - { name: messenger.message_handler, bus: command_bus }
+    Application\Shared\Message\Handler\QueryHandlerInterface:
+      tags:
+        - { name: messenger.message_handler, bus: query_bus }

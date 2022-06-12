@@ -1,0 +1,11 @@
+imports:
+    - { resource: application/application.yaml }
+    - { resource: domain/domain.yaml }
+    - { resource: infrastructure/infrastructure.yaml }
+
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
